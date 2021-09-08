@@ -1,0 +1,16 @@
+{
+  "name": "foodby",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/pgalias/foodby/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pgalias/foodby.git"
+  },
+  "author": {
+    "email": "pawel@galias.me",
+    "name": "Pawel Galias"
+  },
+  "workspaces": ["packages/*"]
+}
