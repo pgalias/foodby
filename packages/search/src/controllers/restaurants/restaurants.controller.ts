@@ -1,7 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { YelpRestaurantProvider } from '../../services/restaurant';
 import { MessagePattern } from '@nestjs/microservices';
-import { Endpoints } from '../../constants';
 import { Location } from '../../model/location';
 import { CuisineType } from '../../model/cuisine-type';
 
@@ -11,7 +10,7 @@ export class RestaurantsController {
     private readonly yelpRestaurantProvider: YelpRestaurantProvider,
   ) {}
 
-  @MessagePattern(Endpoints.RESTAURANTS)
+  @MessagePattern('restaurants')
   getRestaurants([location, radius, cuisineTypes]: [
     Location,
     number,
