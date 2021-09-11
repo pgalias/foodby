@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import clsx from 'clsx';
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,7 +7,17 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
+    <div className={clsx('App', 'overflow-auto')}>
+      <div
+        className={clsx(
+          'w-1/2 h-24 container',
+          'my-8',
+          'bg-blue-800 text-white',
+          'flex justify-center items-center',
+        )}
+      >
+        Tailwind test
+      </div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>

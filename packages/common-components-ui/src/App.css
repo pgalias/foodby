@@ -1,4 +1,5 @@
 .App {
+  @apply bg-amber-400;
   text-align: center;
 }
 
