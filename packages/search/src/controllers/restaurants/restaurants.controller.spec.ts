@@ -1,13 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { HttpModule } from '@nestjs/axios';
 import { of } from 'rxjs';
+import { Location } from '@foodby/commons';
 import { RestaurantsController } from './restaurants.controller';
 import {
   RestaurantProvider,
   YelpRestaurantProvider,
 } from '../../services/restaurant';
 import { Cuisines, CuisineType } from '../../model/cuisine-type';
-import { Location } from '../../model/location';
 
 describe('RestaurantsController', () => {
   let restaurantsController: RestaurantsController;

@@ -2,10 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { map, pluck } from 'rxjs/operators';
-import { QueryString } from '@foodby/commons';
+import { QueryString, Location } from '@foodby/commons';
 import { RestaurantProvider } from '../restaurant-provider';
 import { CuisineType } from '../../../model/cuisine-type';
-import { Location } from '../../../model/location';
 import { Restaurant } from '../../../model/restaurant';
 
 interface ValueObjectBusiness {

@@ -1,4 +1,4 @@
-import { Location } from './location';
+import { Location } from '@foodby/commons';
 import { CuisineType } from './cuisine-type';
 
 export interface Restaurant {

@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
-import { YelpRestaurantProvider } from '../../services/restaurant';
 import { MessagePattern } from '@nestjs/microservices';
-import { Location } from '../../model/location';
+import { Location } from '@foodby/commons';
+import { YelpRestaurantProvider } from '../../services/restaurant';
 import { CuisineType } from '../../model/cuisine-type';
 
 @Controller()
