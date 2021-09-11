@@ -1,1 +1,1 @@
-export { InMemoryRestaurantProviderService } from './in-memory-restaurant-provider.service';
+export { InMemoryRestaurantProvider } from './in-memory-restaurant-provider.service';
