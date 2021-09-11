@@ -2,11 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { map, pluck } from 'rxjs/operators';
+import { QueryString } from '@foodby/commons';
 import { RestaurantProvider } from '../restaurant-provider';
 import { CuisineType } from '../../../model/cuisine-type';
 import { Location } from '../../../model/location';
 import { Restaurant } from '../../../model/restaurant';
-import { queryStringCreator } from '../../../utils/url-helper';
 
 interface ValueObjectBusiness {
   name: string;
@@ -34,7 +34,7 @@ export class YelpRestaurantProvider implements RestaurantProvider {
     radius: number,
     cuisineTypes: CuisineType[],
   ): Observable<Restaurant[]> {
-    const queryString = queryStringCreator({
+    const queryString = QueryString.fromObject({
       term: 'restaurant',
       latitude: location.latitude.toString(),
       longitude: location.longitude.toString(),
@@ -43,7 +43,7 @@ export class YelpRestaurantProvider implements RestaurantProvider {
     });
 
     return this.httpService
-      .get(`${YelpRestaurantProvider.BASE_URL}${queryString}`, {
+      .get(`${YelpRestaurantProvider.BASE_URL}?${queryString}`, {
         headers: {
           Authorization: `Bearer ${process.env.YELP_API_KEY}`,
         },
