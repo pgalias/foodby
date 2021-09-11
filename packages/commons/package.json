@@ -14,7 +14,8 @@
     "test:cov": "jest --coverage",
     "test:watch": "jest --watch",
     "prepare": "yarn build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
   },
   "author": "Pawel Galias <pawel@galias.me> (https://github.com/pgalias)",
   "license": "UNLICENSED",
