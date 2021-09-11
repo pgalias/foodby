@@ -3,13 +3,19 @@ import { HttpModule } from '@nestjs/axios';
 import { ConfigModule } from '@nestjs/config';
 import {
   YelpRestaurantProvider,
-  InMemoryRestaurantProviderService,
+  InMemoryRestaurantProvider,
 } from './services/restaurant';
+import { InMemoryCuisineTypeProvider } from './services/cuisine-type';
 import { RestaurantsController } from './controllers/restaurants';
+import { CuisineTypesController } from './controllers/cuisine-types';
 
 @Module({
   imports: [HttpModule, ConfigModule.forRoot()],
-  controllers: [RestaurantsController],
-  providers: [YelpRestaurantProvider, InMemoryRestaurantProviderService],
+  controllers: [RestaurantsController, CuisineTypesController],
+  providers: [
+    YelpRestaurantProvider,
+    InMemoryRestaurantProvider,
+    InMemoryCuisineTypeProvider,
+  ],
 })
 export class AppModule {}
