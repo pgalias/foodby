@@ -1,8 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { RestaurantProvider } from '../restaurant-provider';
 import { Location } from '@foodby/commons';
-import { Cuisines, CuisineType } from '../../../model/cuisine-type';
-import { Restaurant } from '../../../model/restaurant';
+import { RestaurantProvider } from '../restaurant-provider';
+import {
+  Cuisines,
+  CuisineType,
+} from '../../../cuisine-type/models/cuisine-type';
+import { Restaurant } from '../../models/restaurant';
 import { Observable, of } from 'rxjs';
 
 @Injectable()

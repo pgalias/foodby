@@ -1,21 +1,9 @@
 import { Module } from '@nestjs/common';
-import { HttpModule } from '@nestjs/axios';
 import { ConfigModule } from '@nestjs/config';
-import {
-  YelpRestaurantProvider,
-  InMemoryRestaurantProvider,
-} from './services/restaurant';
-import { InMemoryCuisineTypeProvider } from './services/cuisine-type';
-import { RestaurantsController } from './controllers/restaurants';
-import { CuisineTypesController } from './controllers/cuisine-types';
+import { RestaurantModule } from './restaurant/restaurant.module';
+import { CuisineTypeModule } from './cuisine-type/cuisine-type.module';
 
 @Module({
-  imports: [HttpModule, ConfigModule.forRoot()],
-  controllers: [RestaurantsController, CuisineTypesController],
-  providers: [
-    YelpRestaurantProvider,
-    InMemoryRestaurantProvider,
-    InMemoryCuisineTypeProvider,
-  ],
+  imports: [ConfigModule.forRoot(), RestaurantModule, CuisineTypeModule],
 })
 export class AppModule {}

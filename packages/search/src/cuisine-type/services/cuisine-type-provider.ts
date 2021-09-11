@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { CuisineType } from '../../model/cuisine-type';
+import { CuisineType } from '../models/cuisine-type';
 
 export interface CuisineTypeProvider {
   getAll(): Observable<CuisineType[]>;

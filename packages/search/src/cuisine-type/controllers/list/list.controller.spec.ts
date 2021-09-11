@@ -1,25 +1,23 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CuisineTypesController } from './cuisine-types.controller';
+import { of } from 'rxjs';
+import { ListController } from './list.controller';
 import {
   CuisineTypeProvider,
   InMemoryCuisineTypeProvider,
-} from '../../services/cuisine-type';
-import { Cuisines } from '../../model/cuisine-type';
-import { of } from 'rxjs';
+} from '../../services';
+import { Cuisines } from '../../models/cuisine-type';
 
-describe('CuisineTypesController', () => {
-  let cuisineTypesController: CuisineTypesController;
+describe('ListController', () => {
+  let listController: ListController;
   let cuisineTypeProvider: CuisineTypeProvider;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [CuisineTypesController],
+      controllers: [ListController],
       providers: [InMemoryCuisineTypeProvider],
     }).compile();
 
-    cuisineTypesController = module.get<CuisineTypesController>(
-      CuisineTypesController,
-    );
+    listController = module.get<ListController>(ListController);
     cuisineTypeProvider = module.get<CuisineTypeProvider>(
       InMemoryCuisineTypeProvider,
     );
@@ -31,7 +29,7 @@ describe('CuisineTypesController', () => {
     const providerMock = jest.spyOn(cuisineTypeProvider, 'getAll');
     providerMock.mockReturnValue(of(output));
 
-    cuisineTypesController.getCuisineTypes().subscribe((results) => {
+    listController.listAction().subscribe((results) => {
       expect(results).toEqual(output);
       expect(providerMock).toHaveBeenCalled();
 

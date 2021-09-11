@@ -3,7 +3,7 @@ import { HttpModule, HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
 import { Observable, of } from 'rxjs';
 import { YelpRestaurantProvider } from './yelp-restaurant-provider.service';
-import { Cuisines } from '../../../model/cuisine-type';
+import { Cuisines } from '../../../cuisine-type/models/cuisine-type';
 
 describe('YelpRestaurantProvider', () => {
   let httpService: HttpService;

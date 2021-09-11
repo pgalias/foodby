@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Observable, of } from 'rxjs';
 import { CuisineTypeProvider } from '../cuisine-type-provider';
-import { Cuisines, CuisineType } from '../../../model/cuisine-type';
+import { Cuisines, CuisineType } from '../../models/cuisine-type';
 
 @Injectable()
 export class InMemoryCuisineTypeProvider implements CuisineTypeProvider {

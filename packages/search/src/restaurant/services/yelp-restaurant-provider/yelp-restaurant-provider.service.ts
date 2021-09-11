@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { map, pluck } from 'rxjs/operators';
 import { QueryString, Location } from '@foodby/commons';
 import { RestaurantProvider } from '../restaurant-provider';
-import { CuisineType } from '../../../model/cuisine-type';
-import { Restaurant } from '../../../model/restaurant';
+import { CuisineType } from '../../../cuisine-type/models/cuisine-type';
+import { Restaurant } from '../../models/restaurant';
 
 interface ValueObjectBusiness {
   name: string;

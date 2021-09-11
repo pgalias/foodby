@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Location } from '@foodby/commons';
-import { Restaurant } from '../../model/restaurant';
-import { CuisineType } from '../../model/cuisine-type';
+import { Restaurant } from '../models/restaurant';
+import { CuisineType } from '../../cuisine-type/models/cuisine-type';
 
 export interface RestaurantProvider {
   getRestaurants(

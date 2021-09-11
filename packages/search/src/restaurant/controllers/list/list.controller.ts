@@ -1,17 +1,17 @@
 import { Controller } from '@nestjs/common';
+import { YelpRestaurantProvider } from '../../services';
 import { MessagePattern } from '@nestjs/microservices';
 import { Location } from '@foodby/commons';
-import { YelpRestaurantProvider } from '../../services/restaurant';
-import { CuisineType } from '../../model/cuisine-type';
+import { CuisineType } from '../../../cuisine-type/models/cuisine-type';
 
 @Controller()
-export class RestaurantsController {
+export class ListController {
   constructor(
     private readonly yelpRestaurantProvider: YelpRestaurantProvider,
   ) {}
 
   @MessagePattern('restaurants')
-  getRestaurants([location, radius, cuisineTypes]: [
+  listAction([location, radius, cuisineTypes]: [
     Location,
     number,
     CuisineType[],

@@ -2,27 +2,25 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { HttpModule } from '@nestjs/axios';
 import { of } from 'rxjs';
 import { Location } from '@foodby/commons';
-import { RestaurantsController } from './restaurants.controller';
+import { ListController } from './list.controller';
+import { RestaurantProvider, YelpRestaurantProvider } from '../../services';
 import {
-  RestaurantProvider,
-  YelpRestaurantProvider,
-} from '../../services/restaurant';
-import { Cuisines, CuisineType } from '../../model/cuisine-type';
+  Cuisines,
+  CuisineType,
+} from '../../../cuisine-type/models/cuisine-type';
 
-describe('RestaurantsController', () => {
-  let restaurantsController: RestaurantsController;
+describe('ListController', () => {
+  let restaurantsController: ListController;
   let restaurantProvider: RestaurantProvider;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [HttpModule],
-      controllers: [RestaurantsController],
+      controllers: [ListController],
       providers: [YelpRestaurantProvider],
     }).compile();
 
-    restaurantsController = module.get<RestaurantsController>(
-      RestaurantsController,
-    );
+    restaurantsController = module.get<ListController>(ListController);
     restaurantProvider = module.get<RestaurantProvider>(YelpRestaurantProvider);
   });
 
@@ -47,7 +45,7 @@ describe('RestaurantsController', () => {
     );
     restaurantProviderMock.mockReturnValue(of(output));
 
-    restaurantsController.getRestaurants(input).subscribe((results) => {
+    restaurantsController.listAction(input).subscribe((results) => {
       expect(results).toEqual(output);
       expect(restaurantProviderMock).toHaveBeenCalledWith(
         input[0],

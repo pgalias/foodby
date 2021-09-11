@@ -1,15 +1,15 @@
 import { Controller } from '@nestjs/common';
+import { InMemoryCuisineTypeProvider } from '../../services';
 import { MessagePattern } from '@nestjs/microservices';
-import { InMemoryCuisineTypeProvider } from '../../services/cuisine-type';
 
 @Controller()
-export class CuisineTypesController {
+export class ListController {
   constructor(
     private readonly cuisineTypeProvider: InMemoryCuisineTypeProvider,
   ) {}
 
   @MessagePattern('cuisine-type')
-  getCuisineTypes() {
+  listAction() {
     return this.cuisineTypeProvider.getAll();
   }
 }
