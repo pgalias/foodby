@@ -1,5 +1,5 @@
 import { Location } from './location';
-import { CuisineType } from './cuisineType';
+import { CuisineType } from './cuisine-type';
 
 export interface Restaurant {
   name: string;
