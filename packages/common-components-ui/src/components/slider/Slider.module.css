@@ -1,0 +1,17 @@
+.Slider {
+    @apply w-full h-1;
+    @apply opacity-70 hover:opacity-100 transition-opacity;
+    @apply bg-red-200;
+    @apply appearance-none;
+}
+
+.Slider::-webkit-slider-thumb {
+    @apply w-3.5 h-3.5 rounded;
+    @apply appearance-none;
+    @apply cursor-pointer;
+    @apply bg-red-400;
+}
+
+.SliderNumber {
+    @apply text-sm text-coolGray-500 text-center;
+}

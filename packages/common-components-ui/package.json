@@ -15,6 +15,7 @@
   "dependencies": {
     "autoprefixer": "^10.3.4",
     "clsx": "^1.1.1",
+    "lodash.uniqueid": "^4.0.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "tailwindcss": "^2.2.15"
@@ -29,6 +30,7 @@
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
+    "@types/lodash": "^4.14.172",
     "@types/node": "^16.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -75,10 +77,8 @@
       "tsx",
       "json"
     ],
-    "globals": {
-      "ts-jest": {
-        "isolatedModules": true
-      }
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/__mocks__/styleMock.ts"
     },
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.ts"
