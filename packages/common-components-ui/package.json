@@ -15,6 +15,7 @@
   "dependencies": {
     "autoprefixer": "^10.3.4",
     "clsx": "^1.1.1",
+    "lodash.debounce": "^4.0.8",
     "lodash.uniqueid": "^4.0.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -78,7 +79,8 @@
       "json"
     ],
     "moduleNameMapper": {
-      "\\.css$": "<rootDir>/__mocks__/styleMock.ts"
+      "\\.css$": "<rootDir>/__mocks__/styleMock.ts",
+      "\\.svg$": "<rootDir>/__mocks__/svgMock.ts"
     },
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.ts"
