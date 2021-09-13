@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Slider as SliderComponent } from './Slider';
 
 export default {
-  title: 'Simple/Slider',
+  title: 'Components/Slider',
   component: SliderComponent,
 } as ComponentMeta<typeof SliderComponent>;
 

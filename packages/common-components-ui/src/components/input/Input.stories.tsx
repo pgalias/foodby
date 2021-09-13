@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Input as InputComponent } from './Input';
 
 export default {
-  title: 'Simple/Input',
+  title: 'Components/Input',
   component: InputComponent,
 } as ComponentMeta<typeof InputComponent>;
 

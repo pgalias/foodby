@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SelectableTag as SelectableTagComponent } from './SelectableTag';
 
 export default {
-  title: 'Simple/Selectable Tag',
+  title: 'Components/Selectable Tag',
   component: SelectableTagComponent,
 } as ComponentMeta<typeof SelectableTagComponent>;
 
