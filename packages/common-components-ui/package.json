@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "license": "UNLICENSED",
   "main": "dist/main.es.js",
-  "module": "dist/main.umd.js",
   "types": "dist/main.d.ts",
   "files": [
     "dist"
