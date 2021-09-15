@@ -10,6 +10,7 @@ interface InputProps {
   placeholder?: string;
   type?: string;
   iconName?: IconName;
+  className?: string;
 }
 
 const INPUT_DEBOUNCE_TIME = 400;
@@ -20,6 +21,7 @@ export const Input: FC<InputProps> = ({
   placeholder,
   type = 'text',
   iconName,
+  className,
 }) => {
   const [id] = useState<string>(uniqueId('Input_'));
   const [inputValue, setInputValue] = useState(value);
@@ -38,7 +40,7 @@ export const Input: FC<InputProps> = ({
   };
 
   return (
-    <div className={clsx('fb-input', 'flex')}>
+    <div className={clsx('fb-input', 'flex', className)}>
       {iconName && (
         <label
           className={clsx(
@@ -55,9 +57,9 @@ export const Input: FC<InputProps> = ({
           />
         </label>
       )}
-      <div className={clsx('relative')}>
+      <div className={clsx('relative', 'flex flex-grow')}>
         <input
-          className={clsx('text-lg text-blueGray-600')}
+          className={clsx('text-lg text-blueGray-600', 'flex-grow')}
           type={type}
           onChange={onInputChange}
           id={id}
