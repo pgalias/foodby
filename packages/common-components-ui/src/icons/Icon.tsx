@@ -8,7 +8,8 @@ export type IconName =
   | 'attendees'
   | 'user'
   | 'search'
-  | 'close';
+  | 'close'
+  | 'compass';
 
 interface IconsProps {
   name: IconName;
