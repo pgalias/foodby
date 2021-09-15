@@ -12,6 +12,8 @@ interface SliderProps {
   label?: string;
 }
 
+const numberClasses = 'text-sm text-coolGray-500 text-center';
+
 export const Slider: FC<SliderProps> = ({
   min,
   max,
@@ -21,12 +23,10 @@ export const Slider: FC<SliderProps> = ({
   label,
 }) => {
   const [id] = useState<string>(uniqueId('Slider_'));
-  const [inputValue, setInputValue] = useState(value);
 
   const onInputChange = ({
     target: { value: currentValue },
   }: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(parseFloat(currentValue));
     onChange(parseFloat(currentValue));
   };
 
@@ -41,7 +41,7 @@ export const Slider: FC<SliderProps> = ({
         </label>
       )}
       <div className={clsx('flex justify-between items-center')}>
-        <span className={clsx(styles.SliderNumber, 'pr-2')}>{min}</span>
+        <span className={clsx(numberClasses, 'pr-2')}>{min}</span>
         <input
           className={styles.Slider}
           type="range"
@@ -52,14 +52,14 @@ export const Slider: FC<SliderProps> = ({
           defaultValue={value}
           onChange={onInputChange}
         />
-        <span className={clsx(styles.SliderNumber, 'pl-2')}>{max}</span>
+        <span className={clsx(numberClasses, 'pl-2')}>{max}</span>
       </div>
       <span
-        className={clsx(styles.SliderNumber, 'block pt-1')}
+        className={clsx(numberClasses, 'block pt-1')}
         aria-live="polite"
         role="note"
       >
-        {inputValue}
+        {value}
       </span>
     </div>
   );

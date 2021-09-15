@@ -7,11 +7,13 @@
 
 .Slider::-webkit-slider-thumb {
     @apply w-3.5 h-3.5 rounded;
-    @apply appearance-none;
     @apply cursor-pointer;
     @apply bg-red-400;
+    @apply appearance-none;
 }
 
-.SliderNumber {
-    @apply text-sm text-coolGray-500 text-center;
+.Slider::-moz-range-thumb {
+    @apply w-3.5 h-3.5 rounded;
+    @apply cursor-pointer;
+    @apply bg-red-400;
 }

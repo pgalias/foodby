@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Slider as SliderComponent } from './Slider';
 
@@ -12,15 +12,20 @@ const Template: ComponentStory<typeof SliderComponent> = ({
   max,
   step,
   label,
-}) => (
-  <SliderComponent
-    min={min}
-    max={max}
-    step={step}
-    label={label}
-    onChange={() => {}}
-  />
-);
+}) => {
+  const [value, setValue] = useState(min);
+
+  return (
+    <SliderComponent
+      min={min}
+      max={max}
+      step={step}
+      label={label}
+      onChange={setValue}
+      value={value}
+    />
+  );
+};
 
 export const Slider = Template.bind({});
 Slider.args = {
