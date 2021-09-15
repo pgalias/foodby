@@ -2,7 +2,7 @@
   "name": "@foodby/web-ui",
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "format": "prettier --write src/**/*.ts{,x}",

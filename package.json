@@ -16,6 +16,7 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "wsrun --parallel -p '*/search' -p '*/server' -p '*/web-ui' -c start",
     "test": "yarn workspaces run test",
     "lint": "yarn workspaces run lint",
     "prepare": "husky install"
@@ -24,6 +25,7 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "husky": "^7.0.2",
-    "lint-staged": "^11.1.2"
+    "lint-staged": "^11.1.2",
+    "wsrun": "^5.2.4"
   }
 }
