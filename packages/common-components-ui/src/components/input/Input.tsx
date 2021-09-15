@@ -24,20 +24,13 @@ export const Input: FC<InputProps> = ({
   className,
 }) => {
   const [id] = useState<string>(uniqueId('Input_'));
-  const [inputValue, setInputValue] = useState(value);
 
   const onInputChange = debounce(
     ({ target: { value: currentValue } }: ChangeEvent<HTMLInputElement>) => {
-      setInputValue(currentValue);
       onChange(currentValue);
     },
     INPUT_DEBOUNCE_TIME,
   );
-
-  const onClear = () => {
-    setInputValue('');
-    onChange('');
-  };
 
   return (
     <div className={clsx('fb-input', 'flex', className)}>
@@ -57,30 +50,14 @@ export const Input: FC<InputProps> = ({
           />
         </label>
       )}
-      <div className={clsx('relative', 'flex flex-grow')}>
-        <input
-          className={clsx('text-lg text-blueGray-600', 'flex-grow')}
-          type={type}
-          onChange={onInputChange}
-          id={id}
-          defaultValue={value}
-          placeholder={placeholder}
-        />
-        {inputValue && (
-          <button
-            className={clsx('inline-flex items-center')}
-            type="button"
-            onClick={onClear}
-          >
-            <span className="sr-only">Clear the input</span>
-            <Icon
-              name="close"
-              size={12}
-              className="fill-current text-coolGray-400"
-            />
-          </button>
-        )}
-      </div>
+      <input
+        className={clsx('text-lg text-blueGray-600', 'flex-grow')}
+        type={type}
+        onChange={onInputChange}
+        id={id}
+        defaultValue={value}
+        placeholder={placeholder}
+      />
     </div>
   );
 };
