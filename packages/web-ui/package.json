@@ -52,5 +52,35 @@
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2",
     "vite": "^2.5.4"
+  },
+  "jest": {
+    "clearMocks": true,
+    "testEnvironment": "jsdom",
+    "preset": "ts-jest",
+    "coverageDirectory": "../coverage",
+    "collectCoverageFrom": [
+      "src/**/*.(j|t)s?(x)",
+      "!src/**/*.mock.(j|t)s?(x)",
+      "!src/**/test*",
+      "!src/**/mock/**.*"
+    ],
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "rootDir": "src",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx",
+      "json"
+    ],
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/__mocks__/styleMock.ts",
+      "\\.svg$": "<rootDir>/__mocks__/svgMock.ts"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.ts"
+    ]
   }
 }
