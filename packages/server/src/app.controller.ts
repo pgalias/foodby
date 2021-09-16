@@ -9,7 +9,9 @@ import {
 import { ClientProxy, ClientProxyFactory } from '@nestjs/microservices';
 import { microserviceOptions } from '@foodby/search';
 
-@Controller()
+@Controller({
+  path: 'v1',
+})
 export class AppController {
   private readonly client: ClientProxy;
 

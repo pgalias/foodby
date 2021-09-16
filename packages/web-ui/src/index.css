@@ -1,13 +1,15 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+@import "@foodby/common-components-ui/dist/style.css";
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@layer base {
+    /**
+        * All focusable elements
+        */
+    :is(a[href], area[href], input:not([disabled]):not([type='hidden']), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [contenteditable], audio[controls], video[controls], summary, [tabindex='0'], [tabindex^='0'], [tabindex^='1'], [tabindex^='2'], [tabindex^='3'], [tabindex^='4'], [tabindex^='5'], [tabindex^='6'], [tabindex^='7'], [tabindex^='8'], [tabindex^='9']):focus {
+        outline: none;
+        border-bottom: 1px dashed rgb(209, 213, 219);
+        margin-bottom: -1px;
+    }
 }
+@tailwind components;
+@tailwind utilities;
