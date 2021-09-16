@@ -20,7 +20,9 @@ export const useCurrentPaneState = () => {
   const context = useContext(Context);
 
   if (!context) {
-    throw new Error('useCurrentPaneState must be used within a ContentContext');
+    throw new Error(
+      'useCurrentPaneState must be used within a ContentPaneContext',
+    );
   }
 
   return context.current;
@@ -31,7 +33,7 @@ export const useChangeCurrentPaneState = () => {
 
   if (!context) {
     throw new Error(
-      'useChangeCurrentContentState must be used within a ContentContext',
+      'useChangeCurrentContentState must be used within a ContentPaneContext',
     );
   }
 
