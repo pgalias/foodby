@@ -9,7 +9,7 @@ type WithSearch = {
 };
 
 type WithoutSearch = {
-  showSearch: false;
+  showSearch?: never;
   onSearch?: never;
 };
 

@@ -11,7 +11,6 @@ describe('Slider', () => {
     fireEvent.change(screen.getByRole('slider'), { target: { value: '2' } });
 
     expect(onChangeMock).toHaveBeenCalledWith(2);
-    expect(screen.getByRole('note')).toHaveTextContent('2');
   });
 
   test('user should see the label when proper property has been passed', () => {

@@ -18,7 +18,6 @@ const Template: ComponentStory<typeof MapComponent> = ({
     zoom={zoom}
     zoomOnScroll={zoomOnScroll}
     style={{ height: 400, ...style }}
-    showSearch={false}
   />
 );
 
