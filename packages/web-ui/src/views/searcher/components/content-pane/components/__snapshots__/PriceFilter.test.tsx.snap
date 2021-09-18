@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PriceFilter should render a card and selectable tags components 1`] = `
+<DocumentFragment>
+  <section
+    class="fb-card w-11/12 md:w-3/5 lg:w-2/5 p-8 bg-white text-blueGray-600 rounded-lg overflow-hidden mx-auto h-48 center-y lg:w-3/5"
+  >
+    <h3
+      class="text-sm text-coolGray-400 mb-4 -mt-5 block"
+    >
+      Price
+    </h3>
+    <div
+      class="grid grid-cols-2 sm:grid-cols-4 gap-2"
+    >
+      <button
+        aria-checked="false"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
+        role="checkbox"
+        type="button"
+      >
+        Very cheap
+      </button>
+      <button
+        aria-checked="true"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-red-400 hover:bg-red-500 focus:bg-red-500 text-blueGray-100"
+        role="checkbox"
+        type="button"
+      >
+        Cheap
+      </button>
+      <button
+        aria-checked="false"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
+        role="checkbox"
+        type="button"
+      >
+        Could be cheaper
+      </button>
+      <button
+        aria-checked="false"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
+        role="checkbox"
+        type="button"
+      >
+        Expensive
+      </button>
+    </div>
+  </section>
+</DocumentFragment>
+`;

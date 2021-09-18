@@ -50,6 +50,18 @@ describe('filters reducer', () => {
     });
   });
 
+  test(`should merge current state with payload of ${Types.SET_PRICE}`, () => {
+    expect(
+      reducer(state, {
+        type: Types.SET_PRICE,
+        payload: '$$',
+      }),
+    ).toEqual({
+      ...state,
+      price: '$$',
+    });
+  });
+
   test('should return current state when action type is not recognized', () => {
     expect(
       reducer(state, {

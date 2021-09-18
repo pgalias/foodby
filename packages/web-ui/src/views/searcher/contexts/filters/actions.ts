@@ -1,5 +1,5 @@
 import { Location } from '@foodby/commons';
-import { Types } from './types';
+import { Price, Types } from './types';
 
 export type Actions =
   | {
@@ -13,4 +13,8 @@ export type Actions =
   | {
       type: Types.SET_CUISINE_TYPES;
       payload: string[];
+    }
+  | {
+      type: Types.SET_PRICE;
+      payload: Price | undefined;
     };

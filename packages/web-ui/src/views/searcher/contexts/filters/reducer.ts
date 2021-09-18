@@ -19,6 +19,11 @@ export const reducer = (state: FiltersState, action: Actions): FiltersState => {
         ...state,
         cuisineTypes: action.payload,
       };
+    case Types.SET_PRICE:
+      return {
+        ...state,
+        price: action.payload,
+      };
     default:
       return state;
   }

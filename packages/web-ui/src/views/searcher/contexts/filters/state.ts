@@ -1,9 +1,11 @@
 import { Location } from '@foodby/commons';
+import { Price } from './types';
 
 export interface FiltersState {
   location: Location;
   radius: number;
   cuisineTypes: string[];
+  price?: Price;
 }
 
 export const initialState: FiltersState = {

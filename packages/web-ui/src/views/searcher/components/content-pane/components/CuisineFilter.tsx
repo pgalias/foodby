@@ -25,7 +25,7 @@ export const CuisineFilter: FC = () => {
       <h3 className={clsx('text-sm text-coolGray-400', 'mb-4 -mt-5', 'block')}>
         Cuisines
       </h3>
-      <div className={clsx('grid grid-cols-5 gap-2')}>
+      <div className={clsx('grid grid-cols-4 sm:grid-cols-5 gap-2')}>
         {data?.map((cuisine) => (
           <SelectableTag
             key={cuisine}

@@ -12,7 +12,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@foodby/common-components-ui": "0.1.1",
+    "@foodby/common-components-ui": "0.1.2",
     "@foodby/commons": "0.0.3",
     "autoprefixer": "^10.3.4",
     "axios": "^0.21.4",
