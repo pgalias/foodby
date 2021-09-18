@@ -25,8 +25,9 @@ export const Searcher: FC = () => {
         className="w-screen"
         showSearch
         onSearch={setLocation}
-      />
-      <ContentPane />
+      >
+        <ContentPane />
+      </Map>
       <Navigation />
     </div>
   );
