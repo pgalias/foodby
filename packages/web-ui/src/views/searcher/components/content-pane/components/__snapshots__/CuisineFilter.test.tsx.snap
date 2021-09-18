@@ -3,56 +3,65 @@
 exports[`CuisineFilter should render a card and selectable tags components 1`] = `
 <DocumentFragment>
   <section
-    class="fb-card w-2/5 p-8 bg-white text-blueGray-600 rounded-lg overflow-hidden mx-auto h-48 center-y"
+    class="fb-card w-11/12 md:w-3/5 lg:w-2/5 p-8 bg-white text-blueGray-600 rounded-lg overflow-hidden mx-auto h-48 center-y"
   >
-    <button
-      aria-checked="true"
-      class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-red-400 hover:bg-red-500 focus:bg-red-500 text-blueGray-100"
-      role="checkbox"
-      type="button"
+    <h3
+      class="text-sm text-coolGray-400 mb-4 -mt-5 block"
     >
-      french
-    </button>
-    <button
-      aria-checked="false"
-      class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
-      role="checkbox"
-      type="button"
+      Cuisines
+    </h3>
+    <div
+      class="grid grid-cols-4 sm:grid-cols-5 gap-2"
     >
-      italian
-    </button>
-    <button
-      aria-checked="false"
-      class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
-      role="checkbox"
-      type="button"
-    >
-      polish
-    </button>
-    <button
-      aria-checked="false"
-      class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
-      role="checkbox"
-      type="button"
-    >
-      belgian
-    </button>
-    <button
-      aria-checked="true"
-      class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-red-400 hover:bg-red-500 focus:bg-red-500 text-blueGray-100"
-      role="checkbox"
-      type="button"
-    >
-      bulgarian
-    </button>
-    <button
-      aria-checked="false"
-      class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
-      role="checkbox"
-      type="button"
-    >
-      japanese
-    </button>
+      <button
+        aria-checked="true"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-red-400 hover:bg-red-500 focus:bg-red-500 text-blueGray-100"
+        role="checkbox"
+        type="button"
+      >
+        french
+      </button>
+      <button
+        aria-checked="false"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
+        role="checkbox"
+        type="button"
+      >
+        italian
+      </button>
+      <button
+        aria-checked="false"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
+        role="checkbox"
+        type="button"
+      >
+        polish
+      </button>
+      <button
+        aria-checked="false"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
+        role="checkbox"
+        type="button"
+      >
+        belgian
+      </button>
+      <button
+        aria-checked="true"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-red-400 hover:bg-red-500 focus:bg-red-500 text-blueGray-100"
+        role="checkbox"
+        type="button"
+      >
+        bulgarian
+      </button>
+      <button
+        aria-checked="false"
+        class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 hover:bg-coolGray-300 focus:bg-coolGray-300"
+        role="checkbox"
+        type="button"
+      >
+        japanese
+      </button>
+    </div>
   </section>
 </DocumentFragment>
 `;
