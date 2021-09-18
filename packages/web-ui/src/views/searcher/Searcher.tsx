@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Location } from '@foodby/commons';
 import { Map } from '@foodby/common-components-ui';
 import { useCuisineTypes } from './hooks';
-import { Navigation } from './components';
+import { Navigation, ContentPane } from './components';
 
 export const Searcher: FC = () => {
   const { data } = useCuisineTypes();
@@ -35,6 +35,7 @@ export const Searcher: FC = () => {
         showSearch
         onSearch={setLocation}
       />
+      <ContentPane />
       <Navigation />
     </div>
   );

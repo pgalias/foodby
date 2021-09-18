@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangeFilter should render a card and slider components 1`] = `
+<DocumentFragment>
+  <section
+    class="fb-card w-2/5 p-8 bg-white text-blueGray-600 rounded-lg overflow-hidden mx-auto h-48 center-y"
+  >
+    <div
+      class="fb-slider"
+    >
+      <label
+        class="text-sm text-coolGray-400 mb-4 block"
+        for="Slider_1"
+      >
+        Range (km)
+      </label>
+      <div
+        class="flex justify-between items-center"
+      >
+        <span
+          class="text-sm text-coolGray-500 text-center pr-2"
+        >
+          1
+        </span>
+        <input
+          class="_Slider_p92bp_1"
+          id="Slider_1"
+          max="40"
+          min="1"
+          step="0.1"
+          type="range"
+          value="2.5"
+        />
+        <span
+          class="text-sm text-coolGray-500 text-center pl-2"
+        >
+          40
+        </span>
+      </div>
+      <span
+        aria-live="polite"
+        class="text-sm text-coolGray-500 text-center block pt-1"
+        role="note"
+      >
+        2.5
+      </span>
+    </div>
+  </section>
+</DocumentFragment>
+`;

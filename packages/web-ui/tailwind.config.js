@@ -53,5 +53,25 @@ module.exports = {
         },
       });
     },
+    function ({ addComponents }) {
+      addComponents({
+        '.center-x': {
+          display: 'flex',
+          flexFlow: 'column',
+          alignItems: 'center',
+        },
+        '.center-y': {
+          display: 'flex',
+          flexFlow: 'column',
+          justifyContent: 'center',
+        },
+        '.center-both': {
+          display: 'flex',
+          flexFlow: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+      });
+    },
   ],
 };

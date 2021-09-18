@@ -1,6 +1,6 @@
 import React, { FC, useContext, useState } from 'react';
 
-export enum States {
+export enum ContentPageState {
   NONE,
   RANGE_FILTER,
   CUISINE_FILTER,
@@ -10,8 +10,8 @@ export enum States {
 }
 
 interface ContentState {
-  current: States;
-  setCurrent: (newState: States) => void;
+  current: ContentPageState;
+  setCurrent: (newState: ContentPageState) => void;
 }
 
 const Context = React.createContext<ContentState | undefined>(undefined);
@@ -43,11 +43,11 @@ export const useChangeCurrentPaneState = () => {
 export const ContentPaneProvider: FC<{ children: React.ReactElement }> = ({
   children,
 }) => {
-  const [state, setState] = useState(States.NONE);
+  const [state, setState] = useState(ContentPageState.NONE);
 
-  const changeState = (newState: States) => {
+  const changeState = (newState: ContentPageState) => {
     setState((currentState) =>
-      currentState === newState ? States.NONE : newState,
+      currentState === newState ? ContentPageState.NONE : newState,
     );
   };
 

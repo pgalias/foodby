@@ -1,6 +1,11 @@
 import React, { FC, useState } from 'react';
 import clsx from 'clsx';
 import { Icon, IconName } from '@foodby/common-components-ui';
+import {
+  ContentPageState,
+  useChangeCurrentPaneState,
+  useCurrentPaneState,
+} from '../../contexts';
 
 type Disabled = {
   disabled: true;
@@ -14,19 +19,25 @@ type Enabled = {
 
 type ButtonProps = {
   iconName: IconName;
-  isActive: boolean;
   name: string;
+  stateName: ContentPageState;
 } & (Disabled | Enabled);
 
 export const Button: FC<ButtonProps> = ({
   iconName,
-  isActive,
   name,
+  stateName,
   disabled,
   whyDisabled,
 }) => {
+  const isActive = useCurrentPaneState() === stateName;
+  const changeCurrentPaneStateTo = useChangeCurrentPaneState();
+
   const [focused, setFocused] = useState(false);
-  const onClick = () => setFocused(!focused);
+  const onClick = () => {
+    setFocused(!focused);
+    changeCurrentPaneStateTo(stateName);
+  };
   const onBlur = () => setFocused(false);
 
   return (

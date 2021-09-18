@@ -2,5 +2,5 @@ export {
   ContentPaneProvider,
   useChangeCurrentPaneState,
   useCurrentPaneState,
-  States,
+  ContentPageState,
 } from './provider';
