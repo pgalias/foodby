@@ -1,30 +1,21 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { Location } from '@foodby/commons';
 import { Map } from '@foodby/common-components-ui';
 import { useCuisineTypes } from './hooks';
-import { Navigation, ContentPane } from './components';
+import { ContentPane, Navigation } from './components';
+import { Types, useFilterDispatch, useFilters } from './contexts';
 
 export const Searcher: FC = () => {
-  const { data } = useCuisineTypes();
-  const [location, setLocation] = useState<Location>({
-    latitude: 54.414792427759004,
-    longitude: 18.569411429474155,
-  });
-  const [types, setTypes] = useState<Record<string, boolean>>({});
+  useCuisineTypes();
+  const { location } = useFilters();
+  const dispatch = useFilterDispatch();
 
-  useEffect(() => {
-    if (data?.length) {
-      setTypes(
-        data.reduce(
-          (accumulator, current) => ({
-            ...accumulator,
-            [current]: false,
-          }),
-          {},
-        ),
-      );
-    }
-  }, [data]);
+  const setLocation = (newLocation: Location) => {
+    dispatch({
+      type: Types.SET_LOCATION,
+      payload: newLocation,
+    });
+  };
 
   return (
     <div className="grid grid-rows-1 h-screen">
