@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "declaration": true,
-    "target": "es2017",
-    "outDir": "./dist",
+    "target": "ESNext",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "outDir": "./dist-browser",
     "sourceMap": true
   },
   "include": [

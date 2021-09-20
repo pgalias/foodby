@@ -3,13 +3,15 @@
   "version": "0.0.3",
   "description": "Common stuff for all the monorepos",
   "main": "dist/index.js",
+  "module": "dist-browser/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "/dist",
+    "/dist-browser"
   ],
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "tsc",
+    "prebuild": "rimraf dist && rimraf dist-browser",
+    "build": "tsc && tsc -p tsconfig.browser.json",
     "test": "jest",
     "test:cov": "jest --coverage",
     "test:watch": "jest --watch",
