@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: ['./src/**/*.{ts,tsx}'],
@@ -10,6 +11,10 @@ module.exports = {
       mono: ['ui-monospace', 'SFMono-Regular'],
     },
     colors: { ...colors },
+    screens: {
+      xs: '475px',
+      ...defaultTheme.screens,
+    },
     extend: {
       width: {
         fit: 'fit-content',

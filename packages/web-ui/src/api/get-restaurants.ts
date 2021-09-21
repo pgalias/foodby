@@ -1,12 +1,12 @@
-import axios from 'axios';
-import { QueryString } from '@foodby/commons';
+import axios, { AxiosResponse } from 'axios';
+import { Restaurant, QueryString } from '@foodby/commons';
 
-export const getRestaurants = async (
+export const getRestaurants = (
   lat: number,
   lng: number,
   radius: number,
   cuisines: string[],
-) => {
+): Promise<Restaurant[]> => {
   const queryString = QueryString.fromObject({
     latitude: lat.toString(),
     longitude: lng.toString(),
@@ -14,9 +14,7 @@ export const getRestaurants = async (
     cuisineTypes: cuisines.toString(),
   });
 
-  const { data } = await axios.get(
-    `http://localhost:7777/restaurants?${queryString}`,
-  );
-
-  return data;
+  return axios
+    .get(`/api/v1/restaurants?${queryString}`)
+    .then((response: AxiosResponse<Restaurant[]>) => response.data);
 };

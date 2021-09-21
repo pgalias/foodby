@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 import { ContentPageState, useCurrentPaneState } from '../../contexts';
-import { CuisineFilter, PriceFilter, RangeFilter } from './components';
+import { CuisineFilter, PriceFilter, RangeFilter, Results } from './components';
 
 const stateToComponentMap = {
   [ContentPageState.NONE]: () => null,
@@ -9,7 +9,7 @@ const stateToComponentMap = {
   [ContentPageState.CUISINE_FILTER]: CuisineFilter,
   [ContentPageState.PRICE_RANGE_FILTER]: PriceFilter,
   [ContentPageState.ATTENDEES_FILTER]: () => null,
-  [ContentPageState.RESULTS]: () => null,
+  [ContentPageState.RESULTS]: Results,
 };
 
 export const ContentPane: FC = () => {
@@ -17,7 +17,10 @@ export const ContentPane: FC = () => {
   const Component = stateToComponentMap[currentState];
 
   return (
-    <div className={clsx('absolute bottom-10', 'z-above-map', 'w-full')}>
+    <div
+      className={clsx('absolute bottom-10', 'z-above-map', 'w-full')}
+      aria-live="polite"
+    >
       <Component />
     </div>
   );
