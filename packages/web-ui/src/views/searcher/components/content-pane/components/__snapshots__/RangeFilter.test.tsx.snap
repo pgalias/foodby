@@ -4,6 +4,7 @@ exports[`RangeFilter should render a card and slider components 1`] = `
 <DocumentFragment>
   <section
     class="fb-card w-11/12 md:w-3/5 lg:w-2/5 p-8 bg-white text-blueGray-600 rounded-lg overflow-hidden mx-auto h-48 center-y"
+    role="region"
   >
     <div
       class="fb-slider"

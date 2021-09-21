@@ -24,7 +24,8 @@ export class AppController {
     @Query('latitude', ParseFloatPipe) latitude: number,
     @Query('longitude', ParseFloatPipe) longitude: number,
     @Query('radius', ParseIntPipe) radius: number,
-    @Query('cuisineTypes', ParseArrayPipe) cuisineTypes: string[],
+    @Query('cuisineTypes', new ParseArrayPipe({ optional: true }))
+    cuisineTypes: string[],
   ) {
     return this.client.send('restaurants', [
       { latitude: latitude, longitude: longitude },

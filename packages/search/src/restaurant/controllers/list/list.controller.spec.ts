@@ -36,6 +36,9 @@ describe('ListController', () => {
         url: 'https://yelp.com/biz/pierogarnia-mandu-gdansk?adjust_creative=wkQkZieArHE6lMIcAJ0pyg',
         location: { latitude: 54.40906544334, longitude: 18.567173480988 },
         cuisine: [Cuisines.POLISH],
+        address: ['ul. Garbary 6 / 7', '80-827 Gdańsk', 'Poland'],
+        distance: 463.54,
+        phone: '+48 58 543 65 34',
       },
     ];
 
