@@ -40,7 +40,7 @@ export const Search: FC<SearchProps> = ({ onSearch }) => {
   searchControl.__proto__.onSubmit = ({
     data: { x, y },
   }: OnSearchControlSubmit) => {
-    map.setView({ lng: x, lat: y }, map.getZoom());
+    map.setView({ lng: x, lat: y }, 15);
     onSearch({
       latitude: y,
       longitude: x,
