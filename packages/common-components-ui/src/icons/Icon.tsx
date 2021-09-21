@@ -9,7 +9,8 @@ export type IconName =
   | 'user'
   | 'search'
   | 'close'
-  | 'compass';
+  | 'compass'
+  | 'telephone';
 
 interface IconsProps {
   name: IconName;

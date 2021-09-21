@@ -71,6 +71,15 @@ const Template: ComponentStory<typeof Icon> = ({ size, color }) => (
         />
         <p className="text-center">compass</p>
       </div>
+      <div className="w-1/3 mb-6">
+        <Icon
+          name="telephone"
+          size={size}
+          color={color}
+          className="mx-auto mb-2"
+        />
+        <p className="text-center">telephone</p>
+      </div>
     </div>
   </div>
 );

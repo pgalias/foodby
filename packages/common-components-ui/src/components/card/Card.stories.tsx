@@ -11,7 +11,7 @@ export default {
 
 const Template: ComponentStory<typeof CardComponent> = () => (
   <div className="bg-gray-600 py-12">
-    <CardComponent>
+    <CardComponent className="mx-auto">
       <img
         src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/southern-fried-prawns-5d10921.jpg?quality=90&resize=440,400"
         alt="prawns"
