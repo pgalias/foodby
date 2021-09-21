@@ -3,10 +3,15 @@ import clsx from 'clsx';
 
 interface CardProps {
   className?: string;
+  ariaRole?: string;
   children: React.ReactNode;
 }
 
-export const Card: FC<CardProps> = ({ className, children }) => (
+export const Card: FC<CardProps> = ({
+  className,
+  ariaRole = 'region',
+  children,
+}) => (
   <section
     className={clsx(
       'fb-card',
@@ -16,6 +21,7 @@ export const Card: FC<CardProps> = ({ className, children }) => (
       'overflow-hidden',
       className,
     )}
+    role={ariaRole}
   >
     {children}
   </section>
