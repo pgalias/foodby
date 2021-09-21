@@ -19,6 +19,17 @@ describe('YelpRestaurantProvider', () => {
             longitude: 15.643,
           },
           categories: [{ title: 'french' }],
+          location: {
+            display_address: [
+              '117 Rue Frédéric Chopin',
+              'Vichy',
+              'Auvergne',
+              '03200 France',
+            ],
+          },
+          distance: 54234.543,
+          display_phone: '+33-700-555-349',
+          image_url: 'https://google.fr/image.jpg',
         },
         {
           name: 'restaurant 2',
@@ -28,6 +39,15 @@ describe('YelpRestaurantProvider', () => {
             longitude: 43.6546,
           },
           categories: [{ title: 'japanese' }],
+          location: {
+            display_address: [
+              'ホッカイドウ, サッポロシチュウオウク, キタ10ジョウニシ, 494-1278',
+              '514-1244, Kita 10-jonishi, Chuo-ku Sapporo-shi, Hokkaido',
+              '060-0010 Japan',
+            ],
+          },
+          distance: 12.435,
+          display_phone: '+8167-756-7555',
         },
       ],
     },
@@ -65,12 +85,29 @@ describe('YelpRestaurantProvider', () => {
             url: 'https://restaurant1.fr',
             location: { latitude: 12.321, longitude: 15.643 },
             cuisine: ['french'],
+            address: [
+              '117 Rue Frédéric Chopin',
+              'Vichy',
+              'Auvergne',
+              '03200 France',
+            ],
+            distance: 54234.543,
+            phone: '+33-700-555-349',
+            img: 'https://google.fr/image.jpg',
           },
           {
             name: 'restaurant 2',
             url: 'https://restaurant2.jp',
             location: { latitude: 54.4325, longitude: 43.6546 },
             cuisine: ['japanese'],
+            address: [
+              'ホッカイドウ, サッポロシチュウオウク, キタ10ジョウニシ, 494-1278',
+              '514-1244, Kita 10-jonishi, Chuo-ku Sapporo-shi, Hokkaido',
+              '060-0010 Japan',
+            ],
+            distance: 12.435,
+            phone: '+8167-756-7555',
+            img: undefined,
           },
         ]);
         expect(httpMock).toHaveBeenCalledWith(

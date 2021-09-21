@@ -1,6 +1,6 @@
 {
   "name": "@foodby/commons",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Common stuff for all the monorepos",
   "main": "dist/index.js",
   "module": "dist-browser/index.js",

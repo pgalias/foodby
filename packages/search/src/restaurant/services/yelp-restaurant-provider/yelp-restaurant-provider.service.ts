@@ -2,12 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { map, pluck } from 'rxjs/operators';
-import { QueryString, Location } from '@foodby/commons';
+import { Location, Restaurant, QueryString } from '@foodby/commons';
 import { RestaurantProvider } from '../restaurant-provider';
 import { CuisineType } from '../../../cuisine-type/models/cuisine-type';
-import { Restaurant } from '../../models/restaurant';
 
-interface ValueObjectBusiness {
+interface BusinessDto {
   name: string;
   url: string;
   coordinates: {
@@ -17,9 +16,16 @@ interface ValueObjectBusiness {
   categories: {
     title: string;
   }[];
+  location: {
+    display_address: string[];
+  };
+  distance: number;
+  display_phone: string;
+  image_url: string;
 }
-interface ValueObject {
-  businesses: ValueObjectBusiness[];
+
+interface BusinessesCollectionDto {
+  businesses: BusinessDto[];
 }
 
 @Injectable()
@@ -49,18 +55,22 @@ export class YelpRestaurantProvider implements RestaurantProvider {
       })
       .pipe(
         pluck('data'),
-        map(({ businesses }: ValueObject) =>
+        map(({ businesses }: BusinessesCollectionDto) =>
           businesses.map(this.mapBusinessToRestaurant),
         ),
       );
   }
 
-  private mapBusinessToRestaurant(business: ValueObjectBusiness): Restaurant {
+  private mapBusinessToRestaurant(business: BusinessDto): Restaurant {
     return {
       name: business.name,
       url: business.url,
       location: business.coordinates,
       cuisine: business.categories.map(({ title }) => title as CuisineType),
+      distance: business.distance,
+      address: business.location.display_address,
+      phone: business.display_phone,
+      img: business.image_url,
     };
   }
 }

@@ -1,6 +1,5 @@
 import { Observable } from 'rxjs';
-import { Location } from '@foodby/commons';
-import { Restaurant } from '../models/restaurant';
+import { Location, Restaurant } from '@foodby/commons';
 import { CuisineType } from '../../cuisine-type/models/cuisine-type';
 
 export interface RestaurantProvider {
