@@ -4,7 +4,11 @@ import { ContentPageState } from '../../contexts';
 import { Button } from './Button';
 import { Cta } from './Cta';
 
-export const Navigation: FC = () => (
+interface NavigationProps {
+  onCtaClick: () => void;
+}
+
+export const Navigation: FC<NavigationProps> = ({ onCtaClick }) => (
   <nav className={clsx('bg-white')}>
     <div className={clsx('flex', 'container')}>
       <div className={clsx('flex w-2/5')}>
@@ -20,7 +24,7 @@ export const Navigation: FC = () => (
         />
       </div>
       <div className={clsx('flex w-1/5 relative')}>
-        <Cta />
+        <Cta onClick={onCtaClick} />
       </div>
       <div className={clsx('flex w-2/5')}>
         <Button
