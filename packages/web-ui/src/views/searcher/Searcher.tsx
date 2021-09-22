@@ -6,7 +6,7 @@ import MarkerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { Location, Restaurant } from '@foodby/commons';
 import { Map, Marker } from '@foodby/common-components-ui';
 import { useCuisineTypes, useRestaurants } from './hooks';
-import { ContentPane, Navigation } from './components';
+import { ContentPane, Navigation, RestaurantInfo } from './components';
 import { Types, useFilterDispatch, useFilters } from './contexts';
 
 export const Searcher: FC = () => {
@@ -63,7 +63,7 @@ export const Searcher: FC = () => {
               key={restaurant.name}
               icon={icon}
             >
-              temporary marker
+              <RestaurantInfo restaurant={restaurant} addPhone />
             </Marker>
           ))}
         </Map>

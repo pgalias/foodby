@@ -1,0 +1,3 @@
+.RestaurantContactInfo:not(:last-of-type) {
+    @apply xs:border-r-2;
+}

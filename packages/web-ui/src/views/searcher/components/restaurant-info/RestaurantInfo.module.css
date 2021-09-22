@@ -1,0 +1,7 @@
+.RestaurantInfo a {
+    @apply text-blue-400;
+}
+
+.RestaurantInfo p {
+    @apply m-0;
+}
