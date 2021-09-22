@@ -23,6 +23,7 @@ export const ContentPane: FC = () => {
     <div
       className={clsx('absolute bottom-10', 'z-above-map', 'w-full')}
       aria-live="polite"
+      role="region"
     >
       <Component />
     </div>

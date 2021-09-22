@@ -7,9 +7,10 @@
     "serve": "vite preview",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
-    "test": "jest",
-    "test:cov": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test": "jest --maxWorkers=50%",
+    "test:cov": "jest --coverage --maxWorkers=50%",
+    "test:watch": "jest --watch --maxWorkers=25%",
+    "test:ci": "jest --runInBand"
   },
   "dependencies": {
     "@foodby/common-components-ui": "0.3.0",
@@ -62,10 +63,11 @@
     "preset": "ts-jest",
     "coverageDirectory": "../coverage",
     "collectCoverageFrom": [
-      "src/**/*.(j|t)s?(x)",
-      "!src/**/*.mock.(j|t)s?(x)",
-      "!src/**/test*",
-      "!src/**/mock/**.*"
+      "<rootDir>/**/*.(j|t)s?(x)",
+      "!<rootDir>/**/*.mock.(j|t)s?(x)",
+      "!<rootDir>/**/test*",
+      "!<rootDir>/**/mock/**.*",
+      "!<rootDir>/**/index.(j|t)s?(x)"
     ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest",
