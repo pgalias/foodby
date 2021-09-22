@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { RangeFilter } from './RangeFilter';
-import { Types } from '../../../contexts';
+import { Types } from '../../contexts';
 
 const mockDispatch = jest.fn();
 
-jest.mock('../../../contexts', () => ({
-  ...(jest.requireActual('../../../contexts') as Record<string, unknown>),
+jest.mock('../../contexts', () => ({
+  ...(jest.requireActual('../../contexts') as Record<string, unknown>),
   useFilterDispatch: () => mockDispatch,
   useFilters: jest.fn(() => ({
     radius: 2500,

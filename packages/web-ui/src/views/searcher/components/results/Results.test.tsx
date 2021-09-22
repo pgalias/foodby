@@ -3,10 +3,10 @@ import { render, screen, within } from '@testing-library/react';
 import { QueryObserverSuccessResult } from 'react-query';
 import { Restaurant } from '@foodby/commons';
 import { Results } from './Results';
-import * as Hooks from '../../../hooks';
+import * as Hooks from '../../hooks';
 
-jest.mock('../../../contexts', () => ({
-  ...(jest.requireActual('../../../contexts') as Record<string, unknown>),
+jest.mock('../../contexts', () => ({
+  ...(jest.requireActual('../../contexts') as Record<string, unknown>),
   useFilters: () => ({}),
 }));
 

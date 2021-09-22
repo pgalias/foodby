@@ -1,7 +1,10 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 import { ContentPageState, useCurrentPaneState } from '../../contexts';
-import { CuisineFilter, PriceFilter, RangeFilter, Results } from './components';
+import { CuisineFilter } from '../cuisine-filter';
+import { PriceFilter } from '../price-filter';
+import { RangeFilter } from '../range-filter';
+import { Results } from '../results';
 
 const stateToComponentMap = {
   [ContentPageState.NONE]: () => null,

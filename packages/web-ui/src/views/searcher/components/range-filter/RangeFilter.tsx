@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Card, Slider } from '@foodby/common-components-ui';
 import clsx from 'clsx';
-import { Types, useFilterDispatch, useFilters } from '../../../contexts';
+import { Types, useFilterDispatch, useFilters } from '../../contexts';
 
 export const RangeFilter: FC = () => {
   const { radius } = useFilters();

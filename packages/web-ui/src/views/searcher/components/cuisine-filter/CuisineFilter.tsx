@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Card, SelectableTag } from '@foodby/common-components-ui';
 import clsx from 'clsx';
-import { Types, useFilterDispatch, useFilters } from '../../../contexts';
-import { useCuisineTypes } from '../../../hooks';
+import { Types, useFilterDispatch, useFilters } from '../../contexts';
+import { useCuisineTypes } from '../../hooks';
 
 export const CuisineFilter: FC = () => {
   const { data } = useCuisineTypes();

@@ -2,20 +2,20 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvents from '@testing-library/user-event';
 import { CuisineFilter } from './CuisineFilter';
-import { Types } from '../../../contexts';
+import { Types } from '../../contexts';
 
 const mockDispatch = jest.fn();
 
-jest.mock('../../../contexts', () => ({
-  ...(jest.requireActual('../../../contexts') as Record<string, unknown>),
+jest.mock('../../contexts', () => ({
+  ...(jest.requireActual('../../contexts') as Record<string, unknown>),
   useFilterDispatch: () => mockDispatch,
   useFilters: jest.fn(() => ({
     cuisineTypes: ['french', 'bulgarian'],
   })),
 }));
 
-jest.mock('../../../hooks', () => ({
-  ...(jest.requireActual('../../../hooks') as Record<string, unknown>),
+jest.mock('../../hooks', () => ({
+  ...(jest.requireActual('../../hooks') as Record<string, unknown>),
   useCuisineTypes: jest.fn(() => ({
     data: ['french', 'italian', 'polish', 'belgian', 'bulgarian', 'japanese'],
   })),

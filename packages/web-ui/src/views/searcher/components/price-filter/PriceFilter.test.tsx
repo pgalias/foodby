@@ -2,12 +2,12 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvents from '@testing-library/user-event';
 import { PriceFilter } from './PriceFilter';
-import { Types } from '../../../contexts';
+import { Types } from '../../contexts';
 
 const mockDispatch = jest.fn();
 
-jest.mock('../../../contexts', () => ({
-  ...(jest.requireActual('../../../contexts') as Record<string, unknown>),
+jest.mock('../../contexts', () => ({
+  ...(jest.requireActual('../../contexts') as Record<string, unknown>),
   useFilterDispatch: () => mockDispatch,
   useFilters: jest.fn(() => ({
     price: '$$',

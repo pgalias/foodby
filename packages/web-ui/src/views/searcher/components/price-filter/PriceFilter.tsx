@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Card, SelectableTag } from '@foodby/common-components-ui';
 import clsx from 'clsx';
-import { Price, Types, useFilterDispatch, useFilters } from '../../../contexts';
+import { Price, Types, useFilterDispatch, useFilters } from '../../contexts';
 
 const possiblePrices = {
   $: 'Very cheap',

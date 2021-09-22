@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import clsx from 'clsx';
 import { Card, Icon, SelectableTag } from '@foodby/common-components-ui';
-import { useFilters } from '../../../contexts';
-import { useRestaurants } from '../../../hooks';
+import { useFilters } from '../../contexts';
+import { useRestaurants } from '../../hooks';
 
 export const Results: FC = () => {
   const filters = useFilters();
