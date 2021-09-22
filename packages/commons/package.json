@@ -17,7 +17,7 @@
     "test:watch": "jest --watch",
     "prepare": "yarn build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
+    "lint": "tsc --noEmit && eslint src/**/*.ts"
   },
   "author": "Pawel Galias <pawel@galias.me> (https://github.com/pgalias)",
   "license": "UNLICENSED",

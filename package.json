@@ -19,8 +19,8 @@
     "start:frontend": "wsrun --parallel -p '*/web-ui' -c start",
     "start:backend": "wsrun --parallel -p '*/search' -p '*/server' -c start:dev",
     "start:storybook": "yarn workspace @foodby/common-components-ui start",
-    "test": "yarn workspaces run test",
-    "lint": "yarn workspaces run lint",
+    "test": "wsrun --parallel -c test",
+    "lint": "wsrun --parallel -c lint",
     "prepare": "husky install"
   },
   "devDependencies": {

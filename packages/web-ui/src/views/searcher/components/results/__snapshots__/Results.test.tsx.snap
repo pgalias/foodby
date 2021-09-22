@@ -27,7 +27,7 @@ exports[`Results should render a list of cards components 1`] = `
           class="grid"
         >
           <h3
-            class="font-bold"
+            class="font-bold text-blue-400"
           >
             <a
               href="https://diner.fr"
@@ -56,7 +56,7 @@ exports[`Results should render a list of cards components 1`] = `
           >
             <li
               aria-label="polish"
-              class="mr-1"
+              class="mr-1 pt-1"
             >
               <button
                 class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 cursor-default"
@@ -74,7 +74,7 @@ exports[`Results should render a list of cards components 1`] = `
         class="flex flex-wrap mt-4 xs:border-t-2"
       >
         <div
-          class="w-full pt-4 xs:w-1/2 xs:border-r-2 flex xs:justify-center items-center"
+          class="w-full pt-4 xs:w-1/2 flex xs:justify-center items-center"
         >
           <div
             class="pr-4"
@@ -102,6 +102,7 @@ exports[`Results should render a list of cards components 1`] = `
             <span
               aria-labelledby="distance-label"
               class="text-sm"
+              role="presentation"
             >
               5.24 km
             </span>
@@ -155,7 +156,7 @@ exports[`Results should render a list of cards components 1`] = `
           class="grid"
         >
           <h3
-            class="font-bold"
+            class="font-bold text-blue-400"
           >
             <a
               href="https://einen-happen-essen-gehen.de"
@@ -184,7 +185,7 @@ exports[`Results should render a list of cards components 1`] = `
           >
             <li
               aria-label="italian"
-              class="mr-1"
+              class="mr-1 pt-1"
             >
               <button
                 class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 cursor-default"
@@ -197,7 +198,7 @@ exports[`Results should render a list of cards components 1`] = `
             </li>
             <li
               aria-label="greek"
-              class="mr-1"
+              class="mr-1 pt-1"
             >
               <button
                 class="fb-selectable-tag rounded-lg py-1 px-2 text-xs outline-none transition-colors bg-coolGray-200 text-blueGray-600 cursor-default"
@@ -215,7 +216,7 @@ exports[`Results should render a list of cards components 1`] = `
         class="flex flex-wrap mt-4 xs:border-t-2"
       >
         <div
-          class="w-full pt-4 xs:w-1/2 xs:border-r-2 flex xs:justify-center items-center"
+          class="w-full pt-4 xs:w-1/2 flex xs:justify-center items-center"
         >
           <div
             class="pr-4"
@@ -243,6 +244,7 @@ exports[`Results should render a list of cards components 1`] = `
             <span
               aria-labelledby="distance-label"
               class="text-sm"
+              role="presentation"
             >
               0.43 km
             </span>
