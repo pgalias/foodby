@@ -100,8 +100,8 @@ export const Results: FC = () => {
             >
               <div className={clsx('pr-4')}>
                 <Icon
-                  name="compass"
-                  size={36}
+                  name="telephone"
+                  size={46}
                   className={clsx('fill-current text-coolGray-500')}
                 />
               </div>

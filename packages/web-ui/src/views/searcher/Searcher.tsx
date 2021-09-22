@@ -1,13 +1,16 @@
 import React, { FC, useEffect, useState } from 'react';
 import clsx from 'clsx';
-import { Location } from '@foodby/commons';
+import { Icon } from 'leaflet';
+import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
+import MarkerShadow from 'leaflet/dist/images/marker-shadow.png';
+import { Location, Restaurant } from '@foodby/commons';
 import { Map, Marker } from '@foodby/common-components-ui';
 import { useCuisineTypes, useRestaurants } from './hooks';
 import { ContentPane, Navigation } from './components';
 import { Types, useFilterDispatch, useFilters } from './contexts';
 
 export const Searcher: FC = () => {
-  const [markers, setMarkers] = useState<Location[]>([]);
+  const [markers, setMarkers] = useState<Restaurant[]>([]);
 
   const filters = useFilters();
   const dispatch = useFilterDispatch();
@@ -30,13 +33,18 @@ export const Searcher: FC = () => {
 
   useEffect(() => {
     if (data) {
-      setMarkers(data?.map((restaurant) => restaurant.location));
+      setMarkers(data);
     }
   }, [data]);
 
   const ctaHandler = () => {
     refetch();
   };
+
+  const icon = new Icon({
+    iconUrl: MarkerIcon,
+    shadowUrl: MarkerShadow,
+  });
 
   return (
     <div className={clsx('grid grid-rows-1', 'h-screen')}>
@@ -49,8 +57,12 @@ export const Searcher: FC = () => {
           showSearch
           onSearch={setLocation}
         >
-          {markers.map((marker) => (
-            <Marker center={marker} key={Math.random()}>
+          {markers.map((restaurant) => (
+            <Marker
+              center={restaurant.location}
+              key={restaurant.name}
+              icon={icon}
+            >
               temporary marker
             </Marker>
           ))}
