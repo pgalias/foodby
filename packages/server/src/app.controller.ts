@@ -5,19 +5,15 @@ import {
   ParseIntPipe,
   ParseFloatPipe,
   ParseArrayPipe,
+  Inject,
 } from '@nestjs/common';
-import { ClientProxy, ClientProxyFactory } from '@nestjs/microservices';
-import { microserviceOptions } from '@foodby/search';
+import { ClientProxy } from '@nestjs/microservices';
 
 @Controller({
   path: 'v1',
 })
 export class AppController {
-  private readonly client: ClientProxy;
-
-  constructor() {
-    this.client = ClientProxyFactory.create(microserviceOptions);
-  }
+  constructor(@Inject('SEARCH_SERVICE') private readonly client: ClientProxy) {}
 
   @Get('restaurants')
   getRestaurants(

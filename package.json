@@ -21,7 +21,11 @@
     "start:storybook": "yarn workspace @foodby/common-components-ui start",
     "test": "wsrun --parallel -c test",
     "lint": "wsrun --parallel -c lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build:commons": "yarn workspace @foodby/commons build",
+    "build:search": "yarn workspace @foodby/search build",
+    "build:server": "yarn workspace @foodby/server build",
+    "postinstall": "yarn build:commons && yarn build:search && yarn build:server"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",

@@ -1,9 +1,8 @@
 import { ClientOptions, Transport } from '@nestjs/microservices';
 
 export const microserviceOptions: ClientOptions = {
-  transport: Transport.TCP,
+  transport: Transport.REDIS,
   options: {
-    host: '127.0.0.1',
-    port: 8888,
+    url: process.env.REDIS_URL || 'redis://localhost:6379',
   },
 };

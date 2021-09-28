@@ -1,0 +1,2 @@
+web: yarn workspace @foodby/server start:prod
+worker: yarn workspace @foodby/search start:prod
